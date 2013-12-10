@@ -8,6 +8,16 @@ class CrZC implements ISingleton {
 
    private static $instance = null;
 
+   
+   /**
+* Constructor
+*/
+   protected function __construct() {
+      // include the site specific config.php and create a ref to $crz to be used by config.php
+      $crz = &$this;
+      require(CRZ_SITE_PATH.'/config.php');
+   }
+   
    /**
     * Singleton pattern. Get the instance of the latest created object or create a new one.
     * @return CrZC The instance of this class.
@@ -19,58 +29,55 @@ class CrZC implements ISingleton {
       return self::$instance;
    }
    
-/**
-* Constructor
-*/
-   protected function __construct() {
-      // include the site specific config.php and create a ref to $crz to be used by config.php
-      $crz = &$this;
-      require(CRZ_SITE_PATH.'/config.php');
-   }
-   
-   
-/**
-* Frontcontroller, check url and route to controllers.
-*/
-      public function FrontControllerRoute() {
-        // Take current url and divide it in controller, method and parameters
-		$this->request = new CRequest();
-		$this->request->Init($this->config['base_url']);
-        $controller = $this->request->controller;
-        $method     = $this->request->method;
-        $arguments  = $this->request->arguments;
-		
-		// Is the controller enabled in config.php?
-        $controllerExists    = isset($this->config['controllers'][$controller]);
-        $controllerEnabled    = false;
-        $className             = false;
-        $classExists           = false;
 
-        if($controllerExists) {
-          $controllerEnabled    = ($this->config['controllers'][$controller]['enabled'] == true);
-          $className               = $this->config['controllers'][$controller]['class'];
-          $classExists           = class_exists($className);
-        }
-		
-		// Check if controller has a callable method in the controller class, if then call it
+   
+   
+  /**
+   * Frontcontroller, check url and route to controllers.
+   */
+  public function FrontControllerRoute() {
+    // Take current url and divide it in controller, method and parameters
+    $this->request = new CRequest($this->config['url_type']);
+    $this->request->Init($this->config['base_url']);
+    $controller = $this->request->controller;
+    $method     = $this->request->method;
+    $arguments  = $this->request->arguments;
+    
+    // Is the controller enabled in config.php?
+    $controllerExists   = isset($this->config['controllers'][$controller]);
+    $controllerEnabled   = false;
+    $className          = false;
+    $classExists         = false;
+
+    if($controllerExists) {
+      $controllerEnabled   = ($this->config['controllers'][$controller]['enabled'] == true);
+      $className          = $this->config['controllers'][$controller]['class'];
+      $classExists         = class_exists($className);
+    }
+    
+    // Check if controller has a callable method in the controller class, if then call it
     if($controllerExists && $controllerEnabled && $classExists) {
       $rc = new ReflectionClass($className);
       if($rc->implementsInterface('IController')) {
         if($rc->hasMethod($method)) {
           $controllerObj = $rc->newInstance();
           $methodObj = $rc->getMethod($method);
-          $methodObj->invokeArgs($controllerObj, $arguments);
+          if($methodObj->isPublic()) {
+            $methodObj->invokeArgs($controllerObj, $arguments);
+          } else {
+            die("404. " . get_class() . ' error: Controller method not public.');          
+          }
         } else {
           die("404. " . get_class() . ' error: Controller does not contain method.');
         }
       } else {
         die('404. ' . get_class() . ' error: Controller does not implement interface IController.');
       }
-    }
-    else {
+    } 
+    else { 
       die('404. Page is not found.');
     }
-	}
+  }
 	
 	  /**
     * ThemeEngineRender, renders the reply of the request.
@@ -97,19 +104,4 @@ class CrZC implements ISingleton {
     include("{$themePath}/default.tpl.php");
   }
   
-   /**
-   * Create a url in the way it should be created.
-   *
-   */
-  public function CreateUrl($url=null) {
-    $prepend = $this->base_url;
-    if($this->cleanUrl) {
-      ;
-    } elseif ($this->querystringUrl) {
-      $prepend .= 'index.php?q=';
-    } else {
-      $prepend .= 'index.php/';
-    }
-    return $prepend . rtrim($url, '/');
-  }
   }

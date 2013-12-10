@@ -3,7 +3,6 @@
     * Helpers for the template file.
     */
     $crz->data['header'] = '<h1>Header: CrZ</h1>';
-    $crz->data['main']   = '<p>Main: Now with a theme engine, Not much more to report for now.</p>';
     $crz->data['footer'] = <<<EOD
 <p>Footer: &copy; CrZ by Carl Sebastian Malm</p>
 
