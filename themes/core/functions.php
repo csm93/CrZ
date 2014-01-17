@@ -2,7 +2,7 @@
     /**
     * Helpers for the template file.
     */
-    $crz->data['header'] = '<h1>Header: CrZ</h1>';
+    $crz->data['header'] = '<h1>CrZ</h1>';
     $crz->data['footer'] = <<<EOD
 <p>Footer: &copy; CrZ by Carl Sebastian Malm</p>
 

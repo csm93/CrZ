@@ -5,7 +5,7 @@
 define('CRZ_INSTALL_PATH', dirname(__FILE__));
 define('CRZ_SITE_PATH', CRZ_INSTALL_PATH . '/site');
 
-require(CRZ_INSTALL_PATH.'/src/CrZC/bootstrap.php');
+require(CRZ_INSTALL_PATH.'/src/bootstrap.php');
 
 $crz = CrZC::Instance();
 
