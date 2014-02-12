@@ -42,10 +42,9 @@ Därefter ska din webbsida vara fullt fungerande!
 <b>doe</b> och lösenord: <b>doe</b>. Du kan även skapa din egna användare. Du får mer än gärna vidareutveckla CrZ och skapa en mer avancerad 
 användarhantering. Det här projektet är öppet för alla.</p>
 
-För att ändra webbsidan till DIN egna personliga webbsida så har du självklart möjligheter att ändra logotyp, slogan och namn.  
-Allt detta gör du inuti site/config.php.
+För att ändra webbsidan till DIN egna personliga webbsida så har du självklart möjligheter att ändra logotyp, slogan och namn. Allt detta gör du inuti <pre> site/config.php. </pre>
 <br>
-Det är helt enkelt bara byta ut informationen du ser här. Vill du byta bild är min rekommendation att du byter bilderna som redan finns. Men du kan även byta namn till dina bilder direkt i config.php om så önskas.
+Det är helt enkelt bara att byta ut informationen du ser här nedanför. Vill du byta logotyp är min rekommendation att du byter ut bilden som redan finns och behåller samma namn på filen. Men du kan även byta namn till din logotyp direkt i <pre> site/config.php </pre> om så önskas.
 <pre>
 // Add static entries for use in the template file.
   'menu_to_region' => array('my-navbar'=>'navbar'),
@@ -60,9 +59,11 @@ Det är helt enkelt bara byta ut informationen du ser här. Vill du byta bild är m
 	),
 </pre>
 
+<h2>Ändra utseende</h2>
 
+Förutom att ändra färg och utseende kan du även lägga till nya länkar om du vill. Allt detta görs i <pre> site/config.php </pre>
 
-
+<p>Här ändrar du länkar i menyn:</p>
 
 
  
