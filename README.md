@@ -26,11 +26,9 @@ git clone https://github.com/csm93/CrZ
 <br>Dessa behöver du ändra:
 
 <pre>
-<ul>
-<li>Ändra mapp "site/data" till chmod 777</li>
-<li>Inuti mappen "data" finner du filen ht.sqlite. Ändra chmod till 666.</li>
-<li>Ändra mapp "themes/grid" till chmod 777.</li>
-</ul>
+Ändra mapp "site/data" till chmod 777</li>
+Inuti mappen "data" finner du filen ht.sqlite. Ändra chmod till 666.</li>
+Ändra mapp "themes/grid" till chmod 777.</li>
 </pre>
 
 4. Gå in på din webbsida: <pre>(ex: www.dindomän.se/CrZ)</pre> 
