@@ -14,7 +14,8 @@ Site/data behöver filrättigheter (chmod 777) för att fungera korrekt.
 
 
 1. Börja med att klona ramverket CrZ. Antingen laddar du hem zip-filen direkt från denna sida eller använder dig av Git Bash genom kommandot:
-<br>git clone https://github.com/csm93/CrZ
+<br>
+<pre>git clone https://github.com/csm93/CrZ</pre>
 
 2. När du laddat hem ramverket börjar du med att ändra filen ".htaccess" som du finner bland filerna i mappen CrZ. 
 <br>Ändra fetmarkerade till din egna sökväg:
