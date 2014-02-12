@@ -10,6 +10,7 @@ Webbserver som stödjer:
 
 Site/data behöver filrättigheter (chmod 777) för att fungera korrekt.
 
+</pre>
 <h2>Ett steg i taget</h2>
 
 
