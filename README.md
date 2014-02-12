@@ -9,13 +9,12 @@ Webbserver som stödjer:
 - SQLite (chmod 666)
 
 Site/data behöver filrättigheter (chmod 777) för att fungera korrekt.
-
 </pre>
 <h2>Ett steg i taget</h2>
 
 
 1. Börja med att klona ramverket CrZ. Antingen laddar du hem zip-filen direkt från denna sida eller använder dig av Git Bash genom kommandot:
-git clone https://github.com/csm93/CrZ
+<br>git clone https://github.com/csm93/CrZ
 
 2. När du laddat hem ramverket börjar du med att ändra filen ".htaccess" som du finner bland filerna i mappen CrZ. 
 <br>Ändra fetmarkerade till din egna sökväg:
@@ -27,7 +26,7 @@ git clone https://github.com/csm93/CrZ
 
 <pre>
 Ändra mapp "site/data" till chmod 777</li>
-Inuti mappen "data" finner du filen ht.sqlite. Ändra chmod till 666.</li>
+Inuti mappen "data" finner du filen ht.sqlite. Ändra till chmod 666.</li>
 Ändra mapp "themes/grid" till chmod 777.</li>
 </pre>
 
