@@ -3,8 +3,8 @@
 */
 @import url(../../../themes/grid/style.css);
 
-html{background-color:#FFE2B3;}
-body{background-color:#D0DCE1;}
-#outer-wrap-header{background-color:#FFE2B3;border-bottom:2px solid #FFCE80}
-#outer-wrap-footer{background-color:#FFE2B3}
-a{color:#436370}
+html{background-color:#E8E8E8;}
+body{background-color:#fff; font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;}
+#outer-wrap-header{background-color:#D0D0D0;border-bottom:1px solid #000; opacity: 0.8;}
+#outer-wrap-footer{background-color:#E8E8E8;}
+a{color:#000}
