@@ -20,9 +20,7 @@ git clone https://github.com/csm93/CrZ
 2. När du laddat hem ramverket börjar du med att ändra filen ".htaccess" som du finner bland filerna i mappen CrZ. 
 <br>Ändra fetmarkerade till din egna sökväg:
 
-<pre> 
-RewriteBase <b> /~camc13/phpmvc/projekt/CrZ/ </b>
-</pre>
+<pre>RewriteBase <b> /~camc13/phpmvc/projekt/CrZ/ </b></pre>
 
 3. För att ramverket ska fungera korrekt behöver du ändra kataloger och filers rättigheter.
 <br>Dessa behöver du ändra:
